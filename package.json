@@ -1,0 +1,42 @@
+{
+  "name": "dsh-minder-hooks",
+  "version": "0.1.0",
+  "description": "Capture-first hooks bridge for DeepSeek Harness (dsh): records hook events to a local JSONL store, and runs the full minder supervision hooks when minder is installed",
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "cordis.patch.yml",
+    "hooks-capture.template.json",
+    "capture_hook.py",
+    "bridge-loader.mjs",
+    "README.md",
+    "LICENSE"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xyzzing/dsh-minder-hooks.git"
+  },
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "hooks",
+    "minder",
+    "supervision"
+  ],
+  "dependencies": {
+    "@deepseek-ai/dsh-hooks-claude-code": "0.1.5-rc.2",
+    "@deepseek-ai/schemastery": "^3.18.2"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
+}

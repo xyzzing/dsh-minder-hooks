@@ -1,0 +1,7 @@
+{
+  "checks": [
+    {"name": "js-syntax", "argv": ["node", "--check", "index.js"]},
+    {"name": "loader-syntax", "argv": ["node", "--check", "bridge-loader.mjs"]},
+    {"name": "capture-hook", "argv": ["python3", "-c", "import capture_hook"]}
+  ]
+}

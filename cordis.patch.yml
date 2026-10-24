@@ -1,0 +1,13 @@
+# dsh-minder-hooks bundle patch: mounts the minder hooks bridge into the
+# composition of a dsh profile, capture-first.
+#
+# Install: `dsh plugin --profile <name> add dsh-minder-hooks`
+# (npm, or a git/local path). The `dsh plugin` command pnpm-installs the
+# package into the profile and reconciles it into the profile's
+# `dsh.profile.bundles` layer list.
+- insert:
+    - id: minder-hooks
+      # Node-resolvable package name; keep in sync with package.json `name`.
+      name: dsh-minder-hooks
+      config:
+        defaultTimeoutMs: 600000
